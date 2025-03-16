@@ -64,7 +64,7 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav">
-              <li class="nav-item active"><a class="nav-link" href="index.html">Accueil</a></li>
+              <!-- <li class="nav-item active"><a class="nav-link" href="index.html">Accueil</a></li>
               <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
               <li class="nav-item"><a class="nav-link" href="properties.html">Hébergements</a></li>
               <li class="nav-item"><a class="nav-link" href="gallery.html">Galerie</a></li>
@@ -75,7 +75,7 @@
                   <li class="nav-item"><a class="nav-link" href="blog.html">Actualités</a></li>
                   <li class="nav-item"><a class="nav-link" href="blog-single.html">Article détaillé</a></li>
                 </ul>
-              </li>
+              </li> -->
               <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
             </ul>
           </div>
@@ -209,25 +209,6 @@
     <section class="welcome">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-lg-5 mb-4 mb-lg-0">
-            <div class="row no-gutters welcome-images">
-              <div class="col-sm-7">
-                <div class="card">
-                  <img class="" src="assets/banner2.jpg" alt="Card image cap">
-                </div>
-              </div>
-              <div class="col-sm-5">
-                <div class="card">
-                  <img class="" src="assets/other4.jpg" alt="Card image cap">
-                </div>
-              </div>
-              <div class="col-lg-12">
-                <div class="card">
-                  <img class="" src="assets/other3.jpg" alt="Card image cap">
-                </div>
-              </div>
-            </div>
-          </div>
           <div class="col-lg-7">
             <div class="welcome-content">
               <h2 class="mb-4"><span class="d-block">Bienvenue</span> à Hazavana Lodge</h2>
@@ -238,72 +219,260 @@
               <a class="button button--active home-banner-btn mt-4" href="#">En savoir plus</a>
             </div>
           </div>
+          <div class="col-lg-5 mb-4 mb-lg-0">
+            <div class="row no-gutters welcome-images">
+              <div class="col-sm-7">
+                <div class="card" style="height: 100%;">
+                  <img class="" src="assets/banner2.jpg" alt="Card image cap" style="height: 98%; object-fit: cover;">
+                </div>
+              </div>
+              <div class="col-sm-5">
+                <div class="card">
+                  <img class="" src="assets/other4.jpg" alt="Card image cap">
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="card">
+                  <img class="" src="assets/bungalow5.jpg" alt="Card image cap">
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
     <!-- ================ welcome section end ================= -->
 
+    <!-- ================ gallery area start ================= -->
+    <style>
+      .gallery_area {
+        padding: 0;
+        margin: 50px 0;
+      }
+      .single_gallery {
+        position: relative;
+        overflow: hidden;
+      }
+      .single_gallery img {
+        transition: transform 0.3s ease-out;
+        backface-visibility: hidden;
+        will-change: transform;
+      }
+      .gallery_overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
+      }
+      .single_gallery:hover .gallery_overlay {
+        opacity: 1;
+        visibility: visible;
+      }
+      .single_gallery:hover img {
+        transform: scale(1.05);
+      }
+      .hover_text {
+        color: white;
+        font-size: 20px;
+        font-weight: 500;
+        transform: translateY(10px);
+        transition: transform 0.2s ease-out;
+      }
+      .single_gallery:hover .hover_text {
+        transform: translateY(0);
+      }
+
+      /* Styles pour la version mobile */
+      @media (max-width: 768px) {
+        .gallery_grid {
+          display: none;
+        }
+        .gallery_mobile {
+          display: block;
+        }
+        .gallery_mobile .single_gallery {
+          margin: 0 5px;
+        }
+      }
+      
+      /* Styles pour la version desktop */
+      @media (min-width: 769px) {
+        .gallery_grid {
+          display: block;
+        }
+        .gallery_mobile {
+          display: none;
+        }
+      }
+    </style>
+
+    <section class="gallery_area">
+      <!-- Version desktop - grille -->
+      <div class="gallery_grid container-fluid p-0">
+        <div class="row no-gutters">
+          <div class="col-2">
+            <div class="single_gallery">
+              <img src="assets/other1.jpg" alt="Vue de l'hôtel" style="width: 100%; height: 240px; object-fit: cover;">
+              <div class="gallery_overlay">
+                <span class="hover_text">Fruits du délice</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="single_gallery">
+              <img src="assets/other2.jpg" alt="Chambre" style="width: 100%; height: 240px; object-fit: cover;">
+              <div class="gallery_overlay">
+                <span class="hover_text">Hôtel</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="single_gallery">
+              <img src="assets/roomD2S.jpg" alt="Restaurant" style="width: 100%; height: 240px; object-fit: cover;">
+              <div class="gallery_overlay">
+                <span class="hover_text">Chambre</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="single_gallery">
+              <img src="assets/view2.jpg" alt="Piscine" style="width: 100%; height: 240px; object-fit: cover;">
+              <div class="gallery_overlay">
+                <span class="hover_text">Piscine</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="single_gallery">
+              <img src="assets/babyfoot.jpg" alt="Espace détente" style="width: 100%; height: 240px; object-fit: cover;">
+              <div class="gallery_overlay">
+                <span class="hover_text">Espace détente</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="single_gallery">
+              <img src="assets/lodge1.jpg" alt="Vue plage" style="width: 100%; height: 240px; object-fit: cover;">
+              <div class="gallery_overlay">
+                <span class="hover_text">Vue hôtel</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Version mobile - slider -->
+      <div class="gallery_mobile">
+        <div class="owl-carousel owl-theme gallery-carousel">
+          <div class="single_gallery">
+            <img src="assets/other1.jpg" alt="Vue de l'hôtel" style="width: 100%; height: 240px; object-fit: cover;">
+            <div class="gallery_overlay">
+              <span class="hover_text">Fruits du délice</span>
+            </div>
+          </div>
+          <div class="single_gallery">
+            <img src="assets/other2.jpg" alt="Chambre" style="width: 100%; height: 240px; object-fit: cover;">
+            <div class="gallery_overlay">
+              <span class="hover_text">Hôtel</span>
+            </div>
+          </div>
+          <div class="single_gallery">
+            <img src="assets/roomD2S.jpg" alt="Restaurant" style="width: 100%; height: 240px; object-fit: cover;">
+            <div class="gallery_overlay">
+              <span class="hover_text">Chambre</span>
+            </div>
+          </div>
+          <div class="single_gallery">
+            <img src="assets/view2.jpg" alt="Piscine" style="width: 100%; height: 240px; object-fit: cover;">
+            <div class="gallery_overlay">
+              <span class="hover_text">Piscine</span>
+            </div>
+          </div>
+          <div class="single_gallery">
+            <img src="assets/babyfoot.jpg" alt="Espace détente" style="width: 100%; height: 240px; object-fit: cover;">
+            <div class="gallery_overlay">
+              <span class="hover_text">Espace détente</span>
+            </div>
+          </div>
+          <div class="single_gallery">
+            <img src="assets/lodge1.jpg" alt="Vue plage" style="width: 100%; height: 240px; object-fit: cover;">
+            <div class="gallery_overlay">
+              <span class="hover_text">Vue hôtel</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      $(document).ready(function(){
+        $(".gallery-carousel").owlCarousel({
+          items: 1,
+          loop: true,
+          margin: 0,
+          nav: false,
+          dots: true,
+          autoplay: true,
+          autoplayTimeout: 5000,
+          autoplayHoverPause: true,
+          touchDrag: true,
+          mouseDrag: true,
+          responsive: {
+            0: {
+              items: 1
+            },
+            480: {
+              items: 2
+            }
+          }
+        });
+      });
+    </script>
+    <!-- ================ gallery area end ================= -->
+
     <!-- ================ hotel features section start ================= -->
-    <section class="section-margin hotel-features">
+    <section class="section-margin">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-7">
-            <div class="row">
-              <div class="col-lg-8 col-md-6">
-                <div class="hotel-feature-img mb-4" style="position: relative;">
-                  <img src="assets/other1.jpg" alt="Chambre de luxe" class="img-fluid rounded" style="width: 100%; height: 400px; object-fit: cover;">
+        <div class="row align-items-center">
+          <div class="col-lg-5 mb-4 mb-lg-0">
+            <div class="row no-gutters welcome-images">
+              <div class="col-sm-7">
+                <div class="card" style="height: 100%;">
+                  <img class="" src="assets/Ibungalow2.jpg" alt="Vue extérieure bungalow" style="height: 99%; object-fit: cover;">
                 </div>
               </div>
-              <div class="col-lg-4 col-md-6">
-                <div class="hotel-feature-img mb-4" style="position: relative; margin-top: 60px;">
-                  <img src="assets/babyfoot.jpg" alt="Piscine" class="img-fluid rounded" style="width: 100%; height: 300px; object-fit: cover;">
+              <div class="col-sm-5">
+                <div class="card" style="height: 100%;">
+                  <img class="" src="assets/desk.jpg" alt="Piscine" style="height: 99%; object-fit: cover;">
                 </div>
               </div>
-              <div class="col-lg-6 col-md-6">
-                <div class="hotel-feature-img" style="position: relative; margin-top: -40px;">
-                  <img src="assets/babyfoot1.jpg" alt="Restaurant" class="img-fluid rounded" style="width: 100%; height: 250px; object-fit: cover;">
-                </div>
-              </div>
-              <div class="col-lg-6 col-md-6">
-                <div class="hotel-feature-img" style="position: relative; margin-top: 20px;">
-                  <img src="assets/pool6.jpg" alt="Jardin" class="img-fluid rounded" style="width: 100%; height: 250px; object-fit: cover;">
+              <div class="col-lg-12">
+                <div class="card">
+                  <img class="" src="assets/other3.jpg" alt="Plage de Foulpointe">
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-5">
-            <div class="hotel-features-content pl-4" style="margin-top: 60px;">
-              <h2 class="mb-4">Un cadre exceptionnel pour votre séjour</h2>
-              <div class="hotel-features-list">
-                <div class="feature-item mb-4">
-                  <i class="fas fa-bed mr-3" style="color: #f8b600;"></i>
-                  <div>
-                    <h5>Chambres spacieuses</h5>
-                    <p>Des chambres modernes et confortables avec vue sur l'océan ou le jardin tropical</p>
-                  </div>
-                </div>
-                <div class="feature-item mb-4">
-                  <i class="fas fa-swimming-pool mr-3" style="color: #f8b600;"></i>
-                  <div>
-                    <h5>Piscine et détente</h5>
-                    <p>Une piscine à débordement avec terrasse ensoleillée pour des moments de pure relaxation</p>
-                  </div>
-                </div>
-                <div class="feature-item mb-4">
-                  <i class="fas fa-utensils mr-3" style="color: #f8b600;"></i>
-                  <div>
-                    <h5>Restaurant gastronomique</h5>
-                    <p>Savourez une cuisine locale raffinée préparée avec des produits frais</p>
-                  </div>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-tree mr-3" style="color: #f8b600;"></i>
-                  <div>
-                    <h5>Jardin tropical</h5>
-                    <p>Un jardin luxuriant avec des espèces endémiques pour une immersion totale dans la nature</p>
-                  </div>
-                </div>
-              </div>
+          <div class="col-lg-7">
+            <div class="welcome-content">
+              <h2 class="mb-4">Un cadre idyllique <span class="d-block">pour des vacances de rêve</span></h2>
+              <p>Situé à seulement 5 minutes à pied de la magnifique plage de Foulpointe, Hazavana Lodge vous offre un havre de paix où le confort moderne se mêle harmonieusement à l'authenticité malgache. Notre établissement s'étend sur un vaste terrain arboré, offrant à nos hôtes un environnement paisible et verdoyant.</p>
+              <p>Nos installations comprennent :</p>
+              <ul class="mb-4" style="list-style: none; padding-left: 0;">
+                <li><i class="ti-check-box mr-3"></i>Une piscine extérieure avec espace détente</li>
+                <li><i class="ti-check-box mr-3"></i>Des bungalows et chambres spacieux avec terrasse privée</li>
+                <li><i class="ti-check-box mr-3"></i>Un restaurant proposant une cuisine locale et internationale</li>
+                <li><i class="ti-check-box mr-3"></i>Des espaces de loisirs : baby-foot, karaoké, jeux de société</li>
+              </ul>
+              <p>Que vous veniez en famille, entre amis ou en couple, notre équipe attentionnée mettra tout en œuvre pour faire de votre séjour un moment inoubliable.</p>
             </div>
           </div>
         </div>
